@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\GamePlayController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +15,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', HomeController::class);
+
+Route::get('/create', CreateTeam::class);
+
+Route::get('/results', ResultsList::class);
+
+Route::controller(TeamSelection::class)->group(function(){
+    Route::get('/teams', 'index');
+    Route::get('/teams', 'team');
 });
+
+Route::get('/games', GamePlayController::class);
