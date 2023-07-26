@@ -7,9 +7,10 @@ use Illuminate\Http\Request;
 class TeamSelectionController extends Controller
 {
     public function index(){
-        return 'Here you have the teams list';
+        return view('teams.index');
     }
-    public function team(){
-        return 'Here you have the team selected';
+    public function team($team){
+        //compact('team)=>['curso'=>$curso]
+        return view('teams.team' , compact('team'));
     }
 }

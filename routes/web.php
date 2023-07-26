@@ -1,7 +1,11 @@
 <?php
 
-use App\Http\Controllers\GamePlayController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\GamesController;
+use App\Http\Controllers\CreateTeamController;
+use App\Http\Controllers\ResultsListController;
+use App\Http\Controllers\TeamSelectionController;
+use App\Http\Controllers\CursoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,13 +21,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', HomeController::class);
 
-Route::get('/create', CreateTeam::class);
+Route::get('create', CreateTeamController::class);
 
-Route::get('/results', ResultsList::class);
+Route::get('results', ResultsListController::class);
 
-Route::controller(TeamSelection::class)->group(function(){
-    Route::get('/teams', 'index');
-    Route::get('/teams', 'team');
+Route::controller(TeamSelectionController::class)->group(function(){
+    Route::get('teams', 'index');
+    Route::get('teams/{team}', 'team');
 });
 
-Route::get('/games', GamePlayController::class);
+Route::get('games', GamesController::class);
