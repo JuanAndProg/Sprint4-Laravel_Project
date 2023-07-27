@@ -15,6 +15,11 @@ class CreateTeamController extends Controller
         return view('create.store');
     }
     public function store(Request $request){
+
+        $request->validate([
+            'name'=> 'required'
+        ]);
+
         $team = new Team();
 
         $team->name = $request->name;

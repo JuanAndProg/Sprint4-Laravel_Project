@@ -14,8 +14,12 @@
 
         <label>
             Nombre:
-            <input type="text" name="name">
+            <input type="text" name="name" value="{{old('name')}}">
         </label>
+        @error('name')
+            <br>
+            <small>*{{$message}}</small>
+        @enderror
         <br>
         <br>
         <button type="submit">Confirm</button>
