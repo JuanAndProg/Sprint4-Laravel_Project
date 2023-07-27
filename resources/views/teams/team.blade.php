@@ -7,5 +7,8 @@
     <h1>Team {{$team->name}}</h1> 
     <a href="{{route('home')}}">Back to home page</a>
     <a href="{{route('teams.index')}}">Back to team selection</a>
+    <br>
+    <br>
+    <a href="{{route('teams.edit', $team)}}">Edit Team</a>
     
 @endsection
