@@ -19,15 +19,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', HomeController::class);
+Route::get('/', HomeController::class)->name('home');
 
-Route::get('create', CreateTeamController::class);
+Route::get('create', CreateTeamController::class)->name('create');
 
-Route::get('results', ResultsListController::class);
+Route::get('results', ResultsListController::class)->name('results');
 
 Route::controller(TeamSelectionController::class)->group(function(){
-    Route::get('teams', 'index');
-    Route::get('teams/{team}', 'team');
+    Route::get('teams', 'index')->name('teams.index');
+    Route::get('teams/{team}', 'team')->name('teams.team');
 });
 
-Route::get('games', GamesController::class);
+Route::get('games', GamesController::class)->name('games');
