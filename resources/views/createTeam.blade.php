@@ -12,6 +12,5 @@
             Nombre:
             <input type="text" name="name">
         </label>
-    </form>
-        
+    </form>    
 @endsection

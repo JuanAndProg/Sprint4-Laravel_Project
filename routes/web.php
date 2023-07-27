@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', HomeController::class)->name('home');
 
-Route::get('create', CreateTeamController::class)->name('create');
+Route::get('createTeam', CreateTeamController::class)->name('createTeam');
 
 Route::get('results', ResultsListController::class)->name('results');
 

@@ -6,11 +6,11 @@
 
     <h1>Create a game</h1>
     <a href="{{route('home')}}">Back to home page</a> 
-    {{-- <form action="">
+    <form action="">
         <label>
             Nombre:
             <input type="text" name="name">
         </label>
-    </form> --}}
+    </form>
 
 @endsection
