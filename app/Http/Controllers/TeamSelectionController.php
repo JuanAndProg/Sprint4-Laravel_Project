@@ -31,17 +31,12 @@ class TeamSelectionController extends Controller
     }
     public function destroy(Team $team)
     {
+        // Eliminamos todos los registros de games asociados a este equipo
+        $team->games()->delete();
+
+        // Finalmente, eliminamos el equipo
         $team->delete();
-        return redirect()->route('teams.index')->with('success', 'Team deleted successfully.');
-    }
 
-    public function results(Team $team)
-    {
-        $results = Game::where('teamA_id', $team->id)
-                       ->orWhere('teamB_id', $team->id)
-                       ->orderBy('created_at', 'desc')
-                       ->paginate(10);
-
-        return view('teams.results', compact('team', 'results'));
+        return redirect()->route('teams.index');
     }
 }
