@@ -3,10 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Game;
 
 class ResultsListController extends Controller
 {
-    public function __invoke(){
-        return view('results');
+    public function __invoke()
+    {
+        $results = Game::orderBy('created_at', 'desc')->paginate();
+        return view('results', compact('results'));
     }
 }
