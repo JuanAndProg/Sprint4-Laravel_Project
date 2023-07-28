@@ -5,7 +5,7 @@
 @section('content')
 
     <h1>Team Selection</h1>  
-    <a href="{{route('createTeam')}}">Create a new team</a>
+    <a href="{{route('create')}}">Create a new team</a>
     <a href="{{route('home')}}">Back to home page</a>
    
     <ul>

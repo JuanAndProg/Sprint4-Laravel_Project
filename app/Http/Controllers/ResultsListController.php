@@ -7,6 +7,6 @@ use Illuminate\Http\Request;
 class ResultsListController extends Controller
 {
     public function __invoke(){
-        return view('results');
+        return 'Show the Results';
     }
 }

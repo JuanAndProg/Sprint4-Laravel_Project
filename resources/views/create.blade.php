@@ -1,8 +1,8 @@
 @extends('layouts.plantilla')
 
-@section('title', 'Games')
+@section('title', 'Create')
 
 @section('content')
-    <h1>Create a game</h1>
+    <h1>Create a Team</h1>
     <a href="{{route('home')}}">Back to home page</a>    
 @endsection
