@@ -4,16 +4,10 @@
 
 @section('content')
     
-    <h1>Create a Team</h1>
-    <a href="{{route('home')}}">Back to home page</a>
-    <br>
-    <br>
-    <form action="{{route('create.store')}}" method="POST">
-
-        @csrf
+      @csrf
 
         <label>
-            Nombre:
+            Name:
             <input type="text" name="name" value="{{old('name')}}">
         </label>
         @error('name')
@@ -22,6 +16,6 @@
         @enderror
         <br>
         <br>
-        <button type="submit">Confirm</button>
+        <button class="bg-blue-500 text-white px-4 py-2 rounded-lg" type="submit">Confirm</button>
     </form>    
 @endsection

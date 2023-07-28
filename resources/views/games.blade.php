@@ -1,11 +1,8 @@
 @extends('layouts.plantilla')
 
-@section('title', 'Games')
+@section('title', 'Create your Games')
 
 @section('content')
-    <h1>Create a game</h1>
-    <a href="{{ route('home') }}">Back to home page</a>
-
     @if(session('error'))
         <div style="color: red; margin-bottom: 10px;">{{ session('error') }}</div>
     @endif
@@ -33,14 +30,15 @@
 
         <label for="pointsB">Points Team B:</label>
         <input type="number" name="pointsB" id="pointsB" {{ $status === 'pending' ? 'disabled' : '' }} required>
-
+        <br>
+        <br>
         <label for="status">Match Status:</label>
         <select name="status" id="status" onchange="togglePointsField()" required>
             <option value="pending" {{ $status === 'pending' ? 'selected' : '' }}>Pending</option>
             <option value="played" {{ $status === 'played' ? 'selected' : '' }}>Played</option>
         </select>
 
-        <button type="submit">Save</button>
+        <button class="bg-blue-500 text-white px-4 py-2 rounded-lg" type="submit">Save</button>
     </form>
 
     <script>

@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Game;
+use App\Models\Team;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class GameFactory extends Factory
@@ -11,16 +12,18 @@ class GameFactory extends Factory
 
     public function definition()
     {
+        $status = $this->faker->randomElement(['Played', 'Pending']);
+
         return [
             'teamA_id' => function () {
-                return \App\Models\Team::inRandomOrder()->first()->id;
+                return Team::inRandomOrder()->first()->id;
             },
             'teamB_id' => function (array $attributes) {
-                return \App\Models\Team::where('id', '!=', $attributes['teamA_id'])->inRandomOrder()->first()->id;
+                return Team::where('id', '!=', $attributes['teamA_id'])->inRandomOrder()->first()->id;
             },
-            'status' => $this->faker->randomElement(['Played', 'Pending']),
-            'pointsA' => null,
-            'pointsB' => null,
+            'status' => $status,
+            'pointsA' => $status === 'Pending' ? null : $this->faker->numberBetween(0, 10),
+            'pointsB' => $status === 'Pending' ? null : $this->faker->numberBetween(0, 10),
         ];
     }
 }

@@ -1,35 +1,35 @@
 @extends('layouts.plantilla')
 
-@section('title', 'Results')
+@section('title', 'Game Results')
 
 @section('content')
-    <h1>Game Results</h1>
-    <a href="{{ route('home') }}">Back to home page</a>
-
-    <table>
-        <thead>
-            <tr>
-                <th>Team A</th>
-                <th>Team B</th>
-                <th>Points A</th>
-                <th>Points B</th>
-                <th>Date</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach($results as $result)
+    <div class="py-8 flex justify-center">
+        <table class="w-full max-w-3xl bg-white shadow-md rounded-lg overflow-hidden">
+           <thead class="bg-gray-50">
                 <tr>
-                    <td>{{ $result->teamA->name }}</td>
-                    <td>{{ $result->teamB->name }}</td>
-                    <td>{{ $result->pointsA }}</td>
-                    <td>{{ $result->pointsB }}</td>
-                    <td>{{ $result->created_at }}</td>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Team A</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Team B</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Points A</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Points B</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
                 </tr>
-            @endforeach
-           
-        </tbody>
-    </table>
-    <br>
-            <br>
-    {{$results->links()}}
+            </thead>
+            <tbody class="divide-y divide-gray-200">
+                @foreach($results as $result)
+                    <tr>
+                        <td class="px-6 py-4 whitespace-nowrap text-gray-900">{{ $result->teamA->name }}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-gray-900">{{ $result->teamB->name }}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-gray-900">{{ $result->pointsA }}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-gray-900">{{ $result->pointsB }}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-gray-900">{{ $result->created_at }}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-gray-900">{{ $result->status }}</td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
+    </div>
+    <div class="mt-4 flex justify-center">
+        {{ $results->links() }}
+    </div>
 @endsection

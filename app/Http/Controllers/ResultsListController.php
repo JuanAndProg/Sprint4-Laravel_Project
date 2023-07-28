@@ -9,7 +9,7 @@ class ResultsListController extends Controller
 {
     public function __invoke()
     {
-        $results = Game::orderBy('created_at', 'desc')->paginate();
+        $results = Game::orderBy('created_at', 'desc')->paginate(4);
         return view('results', compact('results'));
     }
 }
