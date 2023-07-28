@@ -5,22 +5,24 @@ namespace Database\Factories;
 use App\Models\Game;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
+/**
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Game>
+ */
 class GameFactory extends Factory
 {
+    /**
+     * Define the model's default state.
+     *
+     * @return array<string, mixed>
+     */
     protected $model = Game::class;
 
-    public function definition()
+    public function definition(): array
     {
         return [
-            'teamA_id' => function () {
-                return \App\Models\Team::inRandomOrder()->first()->id;
-            },
-            'teamB_id' => function (array $attributes) {
-                return \App\Models\Team::where('id', '!=', $attributes['teamA_id'])->inRandomOrder()->first()->id;
-            },
-            'status' => $this->faker->randomElement(['Played', 'Pending']),
-            'pointsA' => null,
-            'pointsB' => null,
+            'TeamA' => $this->faker->Str::random(10),
+            'TeamB' => $this->faker->Str::random(10),
+            'status' => $this->faker->randomElement(['Played','Pending'])
         ];
     }
 }

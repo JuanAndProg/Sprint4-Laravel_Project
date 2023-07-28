@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
 use Illuminate\Database\Seeder;
 use App\Models\Game;
 use App\Models\Team;
@@ -12,16 +14,10 @@ class DatabaseSeeder extends Seeder
     /**
      * Seed the application's database.
      */
-    public function run()
+    public function run(): void
     {
-        Team::factory(30)->create();
-    
-        // Insertar equipos de ejemplo
-        Team::create(['name' => 'Equipo A']);
-        Team::create(['name' => 'Equipo B']);
-        Team::create(['name' => 'Equipo C']);
-        // Agregar más equipos si es necesario
-    
-        Game::factory(20)->create();
+        /*Game::factory(50)->create(); //pending solve id*/
+        Team::factory(50)->create();
+        User::factory(10)->create();
     }
-}    
+}
