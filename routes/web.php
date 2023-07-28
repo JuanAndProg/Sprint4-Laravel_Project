@@ -35,4 +35,6 @@ Route::get('teams/{team}/edit', [TeamSelectionController::class, 'edit'])->name(
 
 Route::put('teams/{team}',[TeamSelectionController::class, 'update'])->name('teams.update');
 
-Route::get('games', GamesController::class)->name('games');
+Route::get('/games', [GamesController::class, 'create'])->name('games.create');
+
+Route::post('/games', [GamesController::class, 'store'])->name('games.store');
