@@ -11,7 +11,7 @@ class TeamSelectionController extends Controller
     public function index(){
 
 
-        $teams = Team::paginate();
+        $teams = Team::paginate(12);
        
         return view('teams.index', compact('teams'));
     }
