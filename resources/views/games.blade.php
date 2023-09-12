@@ -3,6 +3,7 @@
 @section('title', 'Create your Games')
 
 @section('content')
+<<<<<<< HEAD
 
     <form method="post" action="{{ route('games.store') }}" class="max-w-md mx-auto p-6 bg-white rounded-lg shadow-lg">
         @csrf
@@ -74,3 +75,8 @@
         togglePointsField();
     </script>
 @endsection
+=======
+    <h1>Create a game</h1>
+    <a href="{{route('home')}}">Back to home page</a>    
+@endsection
+>>>>>>> 2aff91cecd200f0b516347176debbef68ed3cc43

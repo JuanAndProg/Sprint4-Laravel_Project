@@ -14,7 +14,21 @@
                 </a>
             @endforeach
 
+<<<<<<< HEAD
     </div>
+=======
+    <h1>Team Selection</h1>  
+    <a href="{{route('create')}}">Create a new team</a>
+    <a href="{{route('home')}}">Back to home page</a>
+   
+    <ul>
+        @foreach($teams as $team)
+            <li>
+                <a href="{{route('teams.team', $team->id)}}"> {{$team->name}}
+                </li>
+        @endforeach
+    </ul>
+>>>>>>> 2aff91cecd200f0b516347176debbef68ed3cc43
 
     <div class="mt-8">
         {{ $teams->links() }}

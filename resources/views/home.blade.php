@@ -3,6 +3,7 @@
 @section('title', 'Home')
 
 @section('content')
+<<<<<<< HEAD
     <div class="py-8 text-center">
         <h1 class="text-4xl font-semibold">SPRINT 4 PROJECT</h1>
         <p class="mt-4 text-lg">Welcome to the Sprint 4 Project! This is a web application designed to manage games and teams.</p>
@@ -15,3 +16,11 @@
 
     
 @endsection
+=======
+    <h1>Home Page</h1>
+    <a href="{{route('create')}}">Create a team</a>
+    <a href="{{route('games')}}">Create a game</a>
+    <a href="{{route('teams.index')}}">Show all teams</a>    
+    <a href="{{route('results')}}">Show games played</a>
+@endsection
+>>>>>>> 2aff91cecd200f0b516347176debbef68ed3cc43

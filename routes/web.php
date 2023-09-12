@@ -21,14 +21,16 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', HomeController::class)->name('home');
 
-Route::get('createTeam', CreateTeamController::class)->name('createTeam');
-
-Route::post('newTeam', [CreateTeamController::class, 'store'])->name('create.store');
+Route::get('create', CreateTeamController::class)->name('create');
 
 Route::get('results', ResultsListController::class)->name('results');
 
-Route::get('teams', [TeamSelectionController::class, 'index'])->name('teams.index');
+Route::controller(TeamSelectionController::class)->group(function(){
+    Route::get('teams', 'index')->name('teams.index');
+    Route::get('teams/{team}', 'team')->name('teams.team');
+});
 
+<<<<<<< HEAD
 Route::get('teams/{team}', [TeamSelectionController::class, 'team'])->name('teams.team');
 
 Route::get('teams/{team}/edit', [TeamSelectionController::class, 'edit'])->name('teams.edit');
@@ -40,3 +42,6 @@ Route::delete('teams/{team}', [TeamSelectionController::class, 'destroy'])->name
 Route::get('/games', [GamesController::class, 'create'])->name('games.create');
 
 Route::post('/games', [GamesController::class, 'store'])->name('games.store');
+=======
+Route::get('games', GamesController::class)->name('games');
+>>>>>>> 2aff91cecd200f0b516347176debbef68ed3cc43

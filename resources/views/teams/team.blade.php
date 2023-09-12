@@ -1,8 +1,10 @@
+
 @extends('layouts.plantilla')
 
 @section('title', $team->name)
 
 @section('content')
+<<<<<<< HEAD
     <div class="py-8 flex justify-center">
         <h1 class="text-3xl font-semibold">Team {{ $team->name }}</h1>
     </div>
@@ -18,3 +20,9 @@
     </div>
 @endsection
 
+=======
+    <h1>Team {{$team->name}}</h1>  
+    <a href="{{route('home')}}">Back to home page</a>
+    <a href="{{route('teams.index')}}">Back to team selection</a>
+@endsection
+>>>>>>> 2aff91cecd200f0b516347176debbef68ed3cc43

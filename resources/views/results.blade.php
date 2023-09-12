@@ -3,6 +3,7 @@
 @section('title', 'Game Results')
 
 @section('content')
+<<<<<<< HEAD
     <div class="py-8 flex justify-center">
         <table class="w-full max-w-3xl bg-white shadow-md rounded-lg overflow-hidden">
            <thead class="bg-gray-50">
@@ -33,3 +34,8 @@
         {{ $results->links() }}
     </div>
 @endsection
+=======
+    <h1>Game Results</h1>
+    <a href="{{route('home')}}">Back to home page</a>   
+@endsection
+>>>>>>> 2aff91cecd200f0b516347176debbef68ed3cc43

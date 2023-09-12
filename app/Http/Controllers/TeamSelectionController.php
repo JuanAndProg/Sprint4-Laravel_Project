@@ -15,10 +15,13 @@ class TeamSelectionController extends Controller
        
         return view('teams.index', compact('teams'));
     }
-    public function team(Team $team){
+    public function team($id){
     
+        $team = Team::find($id);
+        //compact('team)=>['curso'=>$curso]
         return view('teams.team' , compact('team'));
     }
+<<<<<<< HEAD
     public function edit(Team $team){
           
         return view('teams.edit', compact('team'));
@@ -40,3 +43,6 @@ class TeamSelectionController extends Controller
         return redirect()->route('teams.index');
     }
 }
+=======
+}
+>>>>>>> 2aff91cecd200f0b516347176debbef68ed3cc43
