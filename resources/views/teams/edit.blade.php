@@ -4,13 +4,15 @@
 
 @section('content')
     
-    <h1>Edit your Team</h1>
+    <div class="py-8 flex justify-center">
+        <h1 class="text-3xl font-semibold">Edit your Team</h1>
+    </div>
 
         @csrf
         @method('put')
 
         <label>
-            Nombre:
+            New name:
             <input type="text" name="name" value="{{$team->name}}">
         </label>
         <br>

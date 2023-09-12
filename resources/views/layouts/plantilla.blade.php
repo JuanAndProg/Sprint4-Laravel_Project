@@ -34,7 +34,7 @@
             <li><a href="{{route('createTeam')}}">Create a team</a></li>
             <li><a href="{{route('games.create')}}">Create a game</a></li>
             <li><a href="{{route('teams.index')}}">Show all teams</a></li> 
-            <li><a href="{{route('results')}}">Show games played</a></li>
+            <li><a href="{{route('results')}}">Show games</a></li>
             <!-- Add more navigation items here -->
         </ul>
     </nav>
