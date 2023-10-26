@@ -5,7 +5,7 @@
 @section('content')
     <div class="py-8 text-center">
         <h1 class="text-4xl font-semibold">SPRINT 4 PROJECT</h1>
-        <p class="mt-4 text-lg">Welcome to the Sprint 4 Project! This is a web application designed to manage games and teams.</p>
+        <p class="mt-4 text-white text-lg">Welcome to the Sprint 4 Project! This is a web application designed to manage games and teams.</p>
     </div>
 
     <div class="flex justify-center space-x-4 mt-8">
