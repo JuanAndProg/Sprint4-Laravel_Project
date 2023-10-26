@@ -40,7 +40,7 @@
     </nav>
 
     <!-- Main Content -->
-    <main class="container mx-auto px-4 py-8 bg-gray-400 text-white rounded-lg font-body">
+    <main class="container mx-auto px-4 py-8 bg-gray-400 text-black rounded-lg font-body">
         @yield('content')
     </main>
     
